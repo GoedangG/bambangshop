@@ -1,3 +1,5 @@
+use std::iter::Product;
+
 use rocket::response::status::Created;
 use rocket::serde::json::Json;
 
@@ -35,5 +37,13 @@ pub fn delete(id: usize) -> Result<Json<Product>> {
     return match ProductService::delete(id) {
         Ok(f) => Ok(Json::from(f)),
         Err(e) => Err(e)
+    };
+}
+
+#[post("/<id>/publish")]
+pub fn publish(id: usize) -> Result<Json<Product>> {
+    return match ProductService::publish(id){
+        Ok(f) => Ok(Json::from(f)),
+        err(e) => Err(e)
     };
 }
