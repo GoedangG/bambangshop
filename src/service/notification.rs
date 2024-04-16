@@ -29,5 +29,4 @@ impl NotificationService {
         }
         return Ok(result.unwrap());
     }
-
 }

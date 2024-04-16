@@ -7,9 +7,9 @@ lazy_static! {
     static ref SUBSCRIBERS: DashMap<String, DashMap<String, Subscriber>> = DashMap::new();
 }
 
-pub struct subscriberRepository;
+pub struct SubscriberRepository;
 
-impl subscriberRepository {
+impl SubscriberRepository {
     pub fn add(product_type: &str, subscriber: Subscriber) -> Subscriber {
         let subscriber_value = subscriber.clone();
         if SUBSCRIBERS.get(product_type).is_none() {
