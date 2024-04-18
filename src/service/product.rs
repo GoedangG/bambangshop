@@ -41,7 +41,7 @@ impl ProductService {
         }
         let product: Product = product_opt.unwrap();
 
-        NotificationService.notify(&product.product_type, "DELETED", product.clone())
+        NotificationService.notify(&product.product_type, "DELETED", product.clone());
         return Ok(Json::from(product));
     }
 
